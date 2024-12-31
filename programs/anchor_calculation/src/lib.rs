@@ -54,7 +54,7 @@ fn store_result(ctx: Context<Update>, result: u64) -> Result<()> {
 #[instruction()]
 pub struct Calculate<'info> {
     #[account(
-        init,
+        init_if_needed,
         payer = user,
         space = 8 + 8 + 32,
         seeds = [b"calc", user.key().as_ref()],

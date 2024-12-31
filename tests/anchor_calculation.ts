@@ -8,7 +8,7 @@ describe("anchor_calculation", () => {
   anchor.setProvider(provider);
 
   const program = anchor.workspace.AnchorCalculation as Program<AnchorCalculation>;
-
+  console.log(provider.wallet.publicKey);
   // Derive the PDA
   const [pda] = anchor.web3.PublicKey.findProgramAddressSync(
     [Buffer.from("calc"), provider.wallet.publicKey.toBuffer()],
